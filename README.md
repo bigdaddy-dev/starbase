@@ -18,8 +18,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 ----
 
-Theme created from wireframe and prototype designed by Michael Douglas. 
+Wordpress Theme created from wireframe and prototype designed by Michael Douglas.
 
-Starcore Labs (C) 2012 and beaker star logo (TM) is owned by Michael Douglas. 
+Starcore Labs (C) 2012 and beaker star logo (TM) is owned by Michael Douglas.
 
-All Rights Reserved. 
+All Rights Reserved.

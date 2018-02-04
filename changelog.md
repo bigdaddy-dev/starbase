@@ -5,7 +5,7 @@
 - Add plugin for forms => hire and contact
 - Create single page templates with and without featured image
 - Create Custom Post Type for Projects
-- Setup blog and project listings pages - limt 9 posts per page
+- Setup blog and project listings pages - limit 9 posts per page
 - Pull latest three posts and projects from respective pages - limit latest 3
 - Fix navigation on mobile / responsive
 
