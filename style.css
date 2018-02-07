@@ -562,6 +562,10 @@ img {
   padding-top: 10px;
 }
 
+.post-image img{
+  height: auto;
+}
+
 .side {
   max-height: 100%;
   max-width: 100%;

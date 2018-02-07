@@ -3,7 +3,6 @@
   Template Name: Home Page
 */
 
-
 // advanced custom fields
 $hire_image = get_field('hire_image');
 $hire_content = get_field('hire_content');
