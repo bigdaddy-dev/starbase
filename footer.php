@@ -17,8 +17,8 @@
       <div class="col-xs-12 col-sm-12 col-md-6">
         <ul class="footer-content">
           <li>&copy; Starcore Labs 2018</li>
-          <li><a href="terms.php">Terms of Service</a></li>
-          <li><a href="privacy.php">Privacy Policy</a></li>
+          <li><a href="<?php echo get_page_link( get_page_by_title( 'terms of service' )->ID ); ?>">Terms of Service</a></li>
+          <li><a href="<?php echo get_page_link( get_page_by_title( 'privacy policy' )->ID ); ?>">Privacy Policy</a></li>
         </ul>
       </div>
       <div class="col-xs-12 col-sm-12 col-md-6">

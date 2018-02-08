@@ -46,11 +46,12 @@ get_header(); ?>
       get_template_part( 'template-parts/content', 'none' );
 		endif; ?>
 
+
 </main><!--primary-->
 
 <nav aria-label="pagination navigation">
   <ul class="pagination pagination-lg justify-content-center">
-    <li class="page-item">
+    <li class="page-item disabled">
       <a class="page-link" href="" aria-label="Previous">
         <span aria-hidden="true">&laquo;</span>
         <span class="sr-only">Previous</span>

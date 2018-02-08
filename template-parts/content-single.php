@@ -11,7 +11,7 @@
 
 
 
-	<div class="col-md-4 entry-content">
+
 
 		<?php if ( has_post_thumbnail() ) { // check for feature image ?>
 		<div class="post-image card box-shadow">
@@ -29,7 +29,14 @@
 
 				if ( 'post' === get_post_type() ) : ?>
 			<?php endif; ?>
-			<p class="post-excerpt card-text"><?php the_excerpt(); ?></p>
+
+			<ul class="post-info">
+				<li><?php the_author(); ?></li>
+				<li>| On <?php the_date(); ?> |</li>
+				<li> <?php the_category(', '); ?></li>
+			</ul>
+
+			<p class="post-body"><?php the_content(); ?></p>
 		</div>
 
-	</div><!-- .entry-content -->
+<!-- .entry-content -->

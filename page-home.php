@@ -124,7 +124,7 @@ Newsletter
 
     <div class="row">
       <div class="col-md-12 button-center">
-        <p><a class="btn btn-primary" href="blog.php" role="button">MORE</a></p>
+        <p><a class="btn btn-primary" href="<?php echo get_page_link( get_page_by_title( blog )->ID ); ?>" role="button">MORE</a></p>
       </div>
     </div>
   </div>
@@ -168,7 +168,7 @@ Newsletter
 
     <div class="row">
       <div class="col-md-12 button-center">
-        <p><a class="btn btn-primary" href="projects.php" role="button">MORE</a></p>
+        <p><a class="btn btn-primary" href="<?php echo get_page_link( get_page_by_title( projects )->ID ); ?>" role="button">MORE</a></p>
       </div>
     </div>
   </div>

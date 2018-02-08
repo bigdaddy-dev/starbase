@@ -2,12 +2,18 @@
 
 ## Dynamic Wordpress Theme
 ##### Current Tasks
+- Working on pagination
 - Add plugin for forms => hire and contact
 - Create single page templates with and without featured image
 - Create Custom Post Type for Projects
-- Setup blog and project listings pages - limit 9 posts per page
 - Pull latest three posts and projects from respective pages - limit latest 3
 - Fix navigation on mobile / responsive
+
+##### 2018-02-07
+- Sidebar - made minor adjustments in style.css
+- Comments by installing disqus plug-in
+- Single-post page
+- Blog and project listings pages - limit 9 posts per page - set in reading
 
 ##### 2018-01-29
 - Made hire section copy and process steps dynamic
