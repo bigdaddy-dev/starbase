@@ -4,10 +4,17 @@
 ##### Current Tasks
 - Working on pagination
 - Add plugin for forms => hire and contact
-- Create single page templates with and without featured image
-- Create Custom Post Type for Projects
-- Pull latest three posts and projects from respective pages - limit latest 3
+- Latest 3 projects on home
 - Fix navigation on mobile / responsive
+- Custom post type for projects
+- Make all images same aspect ratio
+
+##### 2018-02-12
+- Limit excerpt to 15 words on home and blog index
+- Latest 3 post on home
+- Archive
+- Search results
+- Single page template
 
 ##### 2018-02-07
 - Sidebar - made minor adjustments in style.css

@@ -544,6 +544,10 @@ img {
   margin-top: 50px;
 }
 
+.title-center h1{
+  text-align: center;
+}
+
 .projects-list {
   background-color: #343A40;
   color: #ffffff;
@@ -592,4 +596,8 @@ img {
 
 .side aside section ul li a{
   color: #ffffff;
+}
+
+.side-top{
+  margin-top: 72px;
 }

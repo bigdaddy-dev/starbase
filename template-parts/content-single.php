@@ -10,9 +10,6 @@
 ?>
 
 
-
-
-
 		<?php if ( has_post_thumbnail() ) { // check for feature image ?>
 		<div class="post-image card box-shadow">
 			<?php the_post_thumbnail(); ?>

@@ -29,7 +29,7 @@
 
 				if ( 'post' === get_post_type() ) : ?>
 			<?php endif; ?>
-			<p class="post-excerpt card-text"><?php the_excerpt(); ?></p>
+			<p class="post-excerpt card-text"><?php echo excerpt(15); ?></p>
 		</div>
 
 	</div><!-- .entry-content -->

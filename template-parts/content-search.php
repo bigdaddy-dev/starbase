@@ -9,27 +9,25 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+<div class="col-md-4 entry-content">
 
-		<?php if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php
-				starbase_posted_on();
-				starbase_posted_by();
-			?>
-		</div><!-- .entry-meta -->
+	<?php if ( has_post_thumbnail() ) { // check for feature image ?>
+	<div class="post-image card box-shadow">
+		<?php the_post_thumbnail(); ?>
+	</div>
+	<?php } ?>
+
+	<div class="card-body">
+		<?php
+			if ( is_singular() ) :
+			the_title( '<h5 class="entry-title">', '</h5>' );
+			else :
+			the_title( '<h5 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h5>' );
+			endif;
+
+			if ( 'post' === get_post_type() ) : ?>
 		<?php endif; ?>
-	</header><!-- .entry-header -->
+		<p class="post-excerpt card-text"><?php the_excerpt(); ?></p>
+	</div>
 
-	<?php starbase_post_thumbnail(); ?>
-
-	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
-
-	<footer class="entry-footer">
-		<?php starbase_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
+</div><!-- .entry-content -->

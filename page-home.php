@@ -96,30 +96,41 @@ Newsletter
     </div>
 
     <div class="row">
-      <div class="col-md-4">
-        <div class="card mb-4 box-shadow">
-          <a href="single-post"><img class="card-img-top" src="<?php bloginfo('template_directory'); ?>/assets/img/thumbnail.svg" alt="Card image cap"></a>
-          <div class="card-body">
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
+
+      <?php
+   // the query
+   $the_query = new WP_Query( array(
+      'posts_per_page' => 3,
+   ));
+?>
+
+<?php if ( $the_query->have_posts() ) : ?>
+  <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+
+    <div class="col-md-4">
+      <div class="card mb-4 box-shadow">
+        <?php if ( has_post_thumbnail() ) { // check for feature image ?>
+        <div class="post-image card box-shadow">
+          <?php the_post_thumbnail(); ?>
+        </div>
+        <?php } ?>
+        <div class="card-body">
+          <h5>
+            <?php
+              the_title( '<h5 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h5>' );
+              ?>
+          </h5>
+          <p class="card-text"><?php echo excerpt(15); ?></p>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card mb-4 box-shadow">
-          <img class="card-img-top" src="<?php bloginfo('template_directory'); ?>/assets/img/thumbnail.svg" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card mb-4 box-shadow">
-          <img class="card-img-top" src="<?php bloginfo('template_directory'); ?>/assets/img/thumbnail.svg" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-        </div>
-      </div>
+    </div>
+
+  <?php endwhile; ?>
+  <?php wp_reset_postdata(); ?>
+
+<?php else : ?>
+  <p><?php __('No Posts'); ?></p>
+<?php endif; ?>
     </div>
 
     <div class="row">
