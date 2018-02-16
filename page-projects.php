@@ -14,14 +14,8 @@
 
 <main class="row" id="primary" role="main">
 
-  <?php
-     $the_query = new WP_Query( array(
-        'post_type' => 'post',
-        'posts_per_page' => 9,
-     ));
-  ?>
 
-  <?php $loop = new WP_Query( array( 'post_type' => 'project',  'orderby' => 'post_id', 'order' => 'ASC')); ?>
+  <?php $loop = new WP_Query( array( 'post_type' => 'project', 'posts_per_page' => 9, 'orderby' => 'post_id', 'order' => 'ASC')); ?>
 
   <?php while( $loop->have_posts() ) : $loop->the_post(); ?>
 

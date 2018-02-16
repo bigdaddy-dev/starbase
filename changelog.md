@@ -6,7 +6,11 @@
 - Make all images same aspect ratio -> img-fluid -> limit max-height and max-width
 - Change bg-color on form "send" button
 - Remove active from "hire" link on home page
-- Remove sidebar from single project pages
+- Fix pagination
+- Create custom page attributes for single projects -> copy page.php
+  - Remove sidebar from single project pages
+  - Single projects page -> push down footer
+
 
 ##### 2018-02-16
 - Latest 3 projects on home
