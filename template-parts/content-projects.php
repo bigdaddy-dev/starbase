@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying posts
+ * Template part for displaying projects
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -20,7 +20,7 @@
 		<div class="card-body">
 			<?php
 				if ( is_singular() ) :
-				the_title( '<h5 class="entry-title">', '</h5>' );
+				the_title( '<h5 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h5>' );
 				else :
 				the_title( '<h5 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h5>' );
 				endif;

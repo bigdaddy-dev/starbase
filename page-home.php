@@ -91,13 +91,12 @@ Newsletter
   <div class="container">
     <div class="row">
       <div class="col-md-12 section-title">
-        <h3>BLOG</h3>
+        <h3>Blog</h3>
       </div>
     </div>
 
     <div class="row">
-
-      <?php
+<?php
    // the query
    $the_query = new WP_Query( array(
       'posts_per_page' => 3,
@@ -147,34 +146,25 @@ Newsletter
   <div class="container">
     <div class="row">
       <div class="col-md-12 section-title pt-4">
-        <h3>PROJECTS</h3>
+        <h3>Projects</h3>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-4">
-        <div class="card mb-4 box-shadow">
-          <img class="card-img-top" src="<?php bloginfo('template_directory'); ?>/assets/img/thumbnail.svg" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card mb-4 box-shadow">
-          <img class="card-img-top" src="<?php bloginfo('template_directory'); ?>/assets/img/thumbnail.svg" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card mb-4 box-shadow">
-          <img class="card-img-top" src="<?php bloginfo('template_directory'); ?>/assets/img/thumbnail.svg" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-        </div>
-      </div>
+      <?php
+         $the_query = new WP_Query( array(
+            'post_type' => 'post',
+            'posts_per_page' => 3,
+         ));
+      ?>
+
+      <?php $loop = new WP_Query( array( 'post_type' => 'project', 'orderby' => 'post_id', 'order' => 'ASC')); ?>
+
+      <?php while( $loop->have_posts() ) : $loop->the_post(); ?>
+
+        <?php get_template_part( 'template-parts/content-projects', get_post_format() ); ?>
+
+      <?php endwhile; ?>
+      <?php wp_reset_postdata(); ?>
     </div>
 
     <div class="row">
@@ -192,7 +182,7 @@ Newsletter
   <div class="container">
     <div class="row">
       <div class="col-md-12 section-title">
-        <h3>HIRE</h3>
+        <h3>Hire</h3>
       </div>
     </div>
     <div class="row margin-bottom justify-content-center">
@@ -211,7 +201,7 @@ Newsletter
     </div>
     <div class="row">
       <div class="col-md-12 section-title">
-        <h3>DESIGN PROCESS</h3>
+        <h3>Design Process</h3>
       </div>
     </div>
     <div class="row margin-bottom justify-content-center">
@@ -253,41 +243,10 @@ Newsletter
       </div>
       <div class="col-md-8">
 
-        <form class="form-horizontal">
-          <fieldset>
-            <!-- Text input-->
-            <div class="row form-group">
-              <label class="col-md-2 control-label" for="textinput">Name:</label>
-              <div class="col-md-6">
-                <input id="textinput" name="textinput" type="text" placeholder="" class="form-control" required="name required">
-              </div>
-            </div>
+        <?php while (have_posts() ) : the_post(); ?>
+          <?php the_content(); ?>
+        <?php endwhile; ?>
 
-            <!-- Text input-->
-            <div class="row form-group">
-              <label class="col-md-2 control-label" for="email">Email:</label>
-              <div class="col-md-6">
-                <input id="email" name="email" type="text" placeholder="" class="form-control input-md" required="email required">
-              </div>
-            </div>
-
-            <!-- Textarea -->
-            <div class="row form-group">
-              <label class="col-md-2 control-label" for="message">Message:</label>
-              <div class="col-md-6">
-                <textarea class="form-control" id="message" name="message">Write a brief description of your project.</textarea>
-              </div>
-            </div>
-
-            <!-- Button -->
-            <div class="row form-group">
-              <div class="col-md-8 text-right mr-auto">
-                <button id="send" name="send" class="btn btn-primary">SEND</button>
-              </div>
-            </div>
-
-          </fieldset>
-        </form>
       </div>
     </div>
   </div>

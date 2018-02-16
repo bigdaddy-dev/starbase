@@ -43,9 +43,9 @@
 			'container_class' => 'collapse navbar-collapse',
 			'container_id'    => 'starbaseNav',
 			'menu_id'         => 'menu',
-			'menu_class'      => 'navbar-nav ml-auto nav-items-center',
-			'fallback_cb'		  => 'WP_Bootstrap_Navwalker::fallback',
+			'menu_class'      => 'navbar-nav ml-auto ',
 			'walker'			    => new WP_Bootstrap_Navwalker(),
+			'fallback_cb'		  => 'WP_Bootstrap_Navwalker::fallback',
 		) );
 	?>
 </nav><!-- #site-navigation -->

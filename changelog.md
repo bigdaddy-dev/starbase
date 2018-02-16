@@ -2,12 +2,22 @@
 
 ## Dynamic Wordpress Theme
 ##### Current Tasks
-- Working on pagination
-- Add plugin for forms => hire and contact
-- Latest 3 projects on home
 - Fix navigation on mobile / responsive
-- Custom post type for projects
-- Make all images same aspect ratio
+- Make all images same aspect ratio -> img-fluid -> limit max-height and max-width
+- Change bg-color on form "send" button
+- Remove active from "hire" link on home page
+- Remove sidebar from single project pages
+
+##### 2018-02-15
+- Latest 3 projects on home
+- End loop with <?php wp_reset_postdata(); ?> to clear for other possible loops
+- Got project page working & links to individual project pages
+- Worked on pagination - Mostly working - needs previous and next buttons working
+
+##### 2018-02-14
+- Contact page-fullwidth template
+- Custom contact form 7
+- Home page hire form 7
 
 ##### 2018-02-12
 - Limit excerpt to 15 words on home and blog index
