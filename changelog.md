@@ -8,10 +8,12 @@
 - Remove active from "hire" link on home page
 - Remove sidebar from single project pages
 
-##### 2018-02-15
+##### 2018-02-16
 - Latest 3 projects on home
-- End loop with <?php wp_reset_postdata(); ?> to clear for other possible loops
 - Got project page working & links to individual project pages
+
+##### 2018-02-15
+- End loop(s) with wp_reset_postdata(); to clear for other possible loops
 - Worked on pagination - Mostly working - needs previous and next buttons working
 
 ##### 2018-02-14
