@@ -44,11 +44,11 @@ if ( ! function_exists( 'starbase_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'starbase' ),
+			'primary' => esc_html__( 'Primary', 'starbase' ),
 		) );
 
 		// Register Custom Navigation Walker
-		require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -86,6 +86,11 @@ if ( ! function_exists( 'starbase_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'starbase_setup' );
 
+function starbase_add_editor_style(){
+	add_editor_style('assets/css/editor-style.css');
+}
+add_action('admin_init', 'starbase_add_editor_style');
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -94,7 +99,7 @@ add_action( 'after_setup_theme', 'starbase_setup' );
  * @global int $content_width
  */
 function starbase_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'starbase_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'starbase_content_width', 1140 );
 }
 add_action( 'after_setup_theme', 'starbase_content_width', 0 );
 
@@ -120,9 +125,21 @@ add_action( 'widgets_init', 'starbase_widgets_init' );
  * Enqueue scripts and styles.
  */
 function starbase_scripts() {
+	wp_enqueue_style('starbase-bs-css', get_template_directory_uri() . '/assets/css/bootstrap.css');
+
 	wp_enqueue_style( 'starbase-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'starbase-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script('starbase-jquery', get_template_directory_uri() . '/assets/js/jquery-3.2.1.slim.min.js', array(), '20151215', true);
+
+	wp_enqueue_script('popper', get_template_directory_uri() . '/assets/js/popper.min.js', array(), '20151215', true);
+
+	wp_enqueue_script('starbase-bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), '20151215', true);
+
+	wp_enqueue_script('collapse', get_template_directory_uri() . '/assets/js/collapse.js', array('jquery'), '20151215', true);
+
+	wp_enqueue_script('nav-scroll', get_template_directory_uri() . '/assets/js/nav-scroll.js', array('jquery'), '20151215', true);
+
+	wp_enqueue_script('bootstrap-hover', get_template_directory_uri() . '/assets/js/bootstrap-hover.js', array('jquery'), '20151215', true);
 
 	wp_enqueue_script( 'starbase-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
@@ -131,6 +148,7 @@ function starbase_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'starbase_scripts' );
+
 
 /**
  * Implement the Custom Header feature.
@@ -151,6 +169,11 @@ require get_template_directory() . '/inc/template-functions.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Bootstrap Navwalker.
+ */
+require get_template_directory() . '/inc/bootstrap-wp-navwalker.php';
 
 /**
  * Load Jetpack compatibility file.

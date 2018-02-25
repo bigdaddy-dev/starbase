@@ -11,6 +11,8 @@
   - Remove sidebar from single project pages
   - Single projects page -> push down footer
 
+##### 2018-02-25
+- Fixed the navigation menu for mobile
 
 ##### 2018-02-16
 - Latest 3 projects on home
