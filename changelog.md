@@ -2,16 +2,15 @@
 
 ## Dynamic Wordpress Theme
 ##### Current Tasks
-- Fix navigation on mobile / responsive
 - Make all images same aspect ratio -> img-fluid -> limit max-height and max-width
 - Change bg-color on form "send" button
-- Remove active from "hire" link on home page
-- Fix pagination
+- Fix pagination - still need functionality
 - Create custom page attributes for single projects -> copy page.php
   - Remove sidebar from single project pages
   - Single projects page -> push down footer
 
 ##### 2018-02-25
+- Fixed the visual look of the pagination for blog and project listings
 - Fixed the navigation menu for mobile
 
 ##### 2018-02-16

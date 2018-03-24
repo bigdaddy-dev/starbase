@@ -333,6 +333,30 @@ embed, iframe, object {
 /* Starbase Custom CSS */
 
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700");
+
+.top, .top:link {
+  color: #fff;
+  background: #333;
+  position: fixed;
+  z-index: 999;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  opacity: .9;
+  border: none;
+}
+
+.top:hover{
+  opacity:1;
+  text-decoration: none;
+}
+
 h1, h2, h3 {
   font-family: 'Roboto', sans-serif;
 }
@@ -600,4 +624,58 @@ img {
 
 .side-top{
   margin-top: 72px;
+}
+
+/* Custom numeric pagination */
+
+.navigation{
+  text-align: center;
+  margin-top: 40px;
+}
+
+.navigation li a,
+.navigation li a:hover,
+.navigation li.active a,
+.navigation li.disabled {
+    color: #fff;
+    text-decoration:none;
+}
+
+.navigation li {
+    display: inline;
+}
+
+.navigation li a,
+.navigation li a:hover,
+.navigation li.active a,
+.navigation li.disabled {
+    background-color: #6FB7E9;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 12px;
+    padding: 0.75rem;
+}
+
+.navigation li a:hover,
+.navigation li.active a {
+    background-color: #3C8DC5;
+}
+
+/* Custom projects pagination */
+.project-pagination{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
+  list-style: none;
+  border-radius: 0.25rem;
+}
+
+.project-pagination div{
+  margin-right: 10px;
+}
+
+.project-pagination div, a{
+  margin-right: 10px;
 }

@@ -26,12 +26,12 @@ get_header(); ?>
 <main class="row" id="primary" role="main">
   <?php
 
+
      // the query
      $the_query = new WP_Query( array(
         'post_type' => 'post',
         'posts_per_page' => 9,
-     ));
-  ?>
+     )); ?>
 
 		<?php if ( have_posts() ) :
           while ( have_posts() ) : the_post();
@@ -40,12 +40,12 @@ get_header(); ?>
 		  else :
       get_template_part( 'template-parts/content', 'none' );
 		endif; ?>
-
+<?php wp_reset_postdata(); ?>
 
 </main><!--primary-->
-
-<?php get_template_part('template-parts/pagination', 'none' ); ?>
-
+<div class="col-md-12">
+<?php starbase_numeric_posts_nav(); ?>
+</div>
 
 </div><!--containter-->
 </section>

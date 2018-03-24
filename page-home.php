@@ -150,7 +150,7 @@ Newsletter
       </div>
     </div>
     <div class="row">
-      <?php $loop = new WP_Query( array( 'post_type' => 'project', 'posts_per_page' => 3, 'orderby' => 'post_id', 'order' => 'ASC')); ?>
+      <?php $loop = new WP_Query( array( 'post_type' => 'project', 'posts_per_page' => 3, 'orderby' => 'post_id', 'order' => 'DESC')); ?>
 
       <?php while( $loop->have_posts() ) : $loop->the_post(); ?>
 
