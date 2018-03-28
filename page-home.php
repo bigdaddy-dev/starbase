@@ -3,14 +3,6 @@
   Template Name: Home Page
 */
 
-// advanced custom fields
-$hire_image = get_field('hire_image');
-$hire_content = get_field('hire_content');
-$process_step_1 = get_field('process_step_1');
-$process_step_2 = get_field('process_step_2');
-$process_step_3 = get_field('process_step_3');
-$process_step_4 = get_field('process_step_4');
-
 get_header(); ?>
 
 <!-- Jumbotron -->
@@ -146,11 +138,11 @@ Newsletter
   <div class="container">
     <div class="row">
       <div class="col-md-12 section-title pt-4">
-        <h3>Projects</h3>
+        <h3>Portfolio</h3>
       </div>
     </div>
     <div class="row">
-      <?php $loop = new WP_Query( array( 'post_type' => 'project', 'posts_per_page' => 3, 'orderby' => 'post_id', 'order' => 'ASC')); ?>
+      <?php $loop = new WP_Query( array( 'post_type' => 'project', 'posts_per_page' => 3, 'orderby' => 'post_id', 'order' => 'DESC')); ?>
 
       <?php while( $loop->have_posts() ) : $loop->the_post(); ?>
 
@@ -162,88 +154,12 @@ Newsletter
 
     <div class="row">
       <div class="col-md-12 button-center">
-        <p><a class="btn btn-primary" href="<?php echo get_page_link( get_page_by_title( projects )->ID ); ?>" role="button">MORE</a></p>
+        <p><a class="btn btn-primary" href="<?php echo get_page_link( get_page_by_title( portfolio )->ID ); ?>" role="button">MORE</a></p>
       </div>
     </div>
   </div>
 </section>
 <!-- end projects list -->
 
-<!-- hire -->
-<a class="hire-anchor" id="hire"></a>
-<section class="hire section-space mt-5">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 section-title">
-        <h3>Hire</h3>
-      </div>
-    </div>
-    <div class="row margin-bottom justify-content-center">
-      <div class="col-md-4">
-        <div class="card">
-          <?php if(!empty($hire_image)) : ?>
-              <img class="card-img-top square-img img-responsive" src="<?php echo $hire_image['url']; ?>" alt="<?php echo $hire_image['alt']; ?>">
-          <?php endif; ?>
-          <div class="card-body">
-          </div>
-        </div>
-      </div>
-      <div class="col-md-8">
-        <?php echo $hire_content; ?>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12 section-title">
-        <h3>Design Process</h3>
-      </div>
-    </div>
-    <div class="row margin-bottom justify-content-center">
-      <div class="col-md-4">
-        <p>&nbsp;</p>
-      </div>
-      <div class="col-md-8">
-        <ul class="process">
-          <li>
-            <p>Step 1</p>
-            <?php if(!empty($process_step_1)) : ?>
-                <?php echo $process_step_1; ?>
-            <?php endif; ?>
-          </li>
-          <li>
-            <p>Step 2</p>
-            <?php if(!empty($process_step_2)) : ?>
-                <?php echo $process_step_2; ?>
-            <?php endif; ?>
-          </li>
-          <li>
-            <p>Step 3</p>
-            <?php if(!empty($process_step_3)) : ?>
-                <?php echo $process_step_3; ?>
-            <?php endif; ?>
-          </li>
-          <li>
-            <p>Step 4</p>
-            <?php if(!empty($process_step_4)) : ?>
-                <?php echo $process_step_4; ?>
-            <?php endif; ?>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="row margin-bottom justify-content-center">
-      <div class="col-md-4">
-        <p>&nbsp;</p>
-      </div>
-      <div class="col-md-8">
-
-        <?php while (have_posts() ) : the_post(); ?>
-          <?php the_content(); ?>
-        <?php endwhile; ?>
-        <?php wp_reset_postdata(); ?>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- hire -->
 
 <?php get_footer(); ?>

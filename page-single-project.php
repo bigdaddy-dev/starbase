@@ -19,6 +19,8 @@ get_header(); ?>
 
 			get_template_part( 'template-parts/content-projects', get_post_type() );
 
+      the_content();
+
 		endwhile; // End of the loop.
 		?>
 
