@@ -1,6 +1,7 @@
 # Starbase
 
 ##### Theme Name: Starbase
+![Screenshot](https://github.com/starcorelabs/starbase/blob/master/screenshot.PNG)
 ##### Theme URI: http://underscores.me/
 ##### Author: Starcore Labs
 ##### Author URI: http://starcorelabs.com
